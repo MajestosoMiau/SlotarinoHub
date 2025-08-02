@@ -1,1 +1,1 @@
-# SlotarinoHub
+# Slotarino
