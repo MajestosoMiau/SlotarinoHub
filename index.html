@@ -1,24 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <!-- Your existing head content -->
-    <style>
-        body { opacity: 0; transition: opacity 0.5s; } /* Loading fade */
-        header, footer { min-height: 50px; background: #f0f0f0; } /* Fallback */
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slotarino's Cozy Hub</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- These must be empty -->
-    <header></header>
-    
-    <main id="main-content">
-        <!-- Your unique content here -->
-        <h1>Welcome to Slotarino's Cozy Hub!</h1>
-    </main>
-    
-    <footer></footer>
+    <!-- Header (Logo + Navigation) -->
+    <header>
+        <div class="logo">
+            <h1>Slot<span>arino</span></h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="content/slots.html"><i class="fas fa-sliders-h"></i> Slots</a></li>
+                <li><a href="content/gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+                <li><a href="content/videos.html"><i class="fas fa-video"></i> Videos</a></li>
+                <li><a href="content/ptourn.html"><i class="fas fa-trophy"></i> Poker Tournaments</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Scripts MUST be at bottom -->
-    <script src="assets/js/load-components.js"></script>
+    <!-- Main Casino Listings -->
+    <main>
+        <h2>Top Casinos with Welcome Bonuses</h2>
+        
+        <div class="casino-grid">
+            <!-- Casino 1 -->
+            <div class="casino-card">
+                <img src="images/rollbit.png" alt="Rollbit">
+                <div class="casino-info">
+                    <span class="bonus-tag">HOT</span>
+                    <h3>Rollbit Casino</h3>
+                    <p><strong>Welcome Bonus:</strong> 100% up to $500 + 50 Free Spins</p>
+                    <a href="#" class="btn">Claim Bonus</a>
+                </div>
+            </div>
+
+            <!-- Casino 2 -->
+            <div class="casino-card">
+                <img src="images/casino2-logo.png" alt="Lucky Spin">
+                <div class="casino-info">
+                    <span class="bonus-tag">POPULAR</span>
+                    <h3>Lucky Spin</h3>
+                    <p><strong>Welcome Bonus:</strong> 200% up to $1000</p>
+                    <a href="#" class="btn">Claim Bonus</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Slotarino. All rights reserved.</p>
+    </footer>
 </body>
 </html>
