@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slot Gallery | Slotarino</title>
+    <meta name="description" content="Beautiful slot machine screenshots">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .gallery-container {
+            padding: 100px 2rem 4rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body class="is-preload">
+    <header></header>
+    
+    
+    <!-- Gallery Content -->
+    <main class="gallery-container">
+        <h1>Slot Gallery</h1>
+        <p class="subtitle">Beautiful slot machine screenshots</p>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item glass-card">
+                <img src="assets/img/gallery/slot1.jpg" alt="Starburst Slot" class="gallery-image">
+                <div class="gallery-caption">Starburst XXXtreme</div>
+            </div>
+            <!-- More gallery items -->
+        </div>
+    </main>
+   <!-- Footer will load here -->
+    <footer></footer>
+   <script src="assets/js/load-components.js"></script> 
+    <script src="assets/js/main.js"></script> 
+    <script>
+        // Set active nav link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.classList.toggle('active', link.href === window.location.href);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poker Tournaments | Slotarino</title>
+    <meta name="description" content="Upcoming poker tournaments schedule">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .tournaments-container {
+            padding: 100px 2rem 4rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .tournaments-table {
+            width: 100%;
+            margin-top: 2rem;
+            border-collapse: collapse;
+        }
+        .tournaments-table th {
+            background: rgba(251, 146, 60, 0.2);
+            padding: 1rem;
+            text-align: left;
+        }
+        .tournaments-table td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+    </style>
+</head>
+<body class="is-preload">
+    <header>     
+    </header>
+    
+    <!-- Tournaments Content -->
+    <main class="tournaments-container">
+        <h1>Poker Tournaments</h1>
+        <p class="subtitle">Upcoming events and schedules</p>
+        
+        <table class="tournaments-table glass-card">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Event</th>
+                    <th>Buy-in</th>
+                    <th>Prize Pool</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>May 15</td>
+                    <td>Sunday Million</td>
+                    <td>$215</td>
+                    <td>$1,000,000</td>
+                </tr>
+                <!-- More tournament rows -->
+            </tbody>
+        </table>
+    </main>
+    <!-- Footer will load here -->
+    <footer></footer>
+    <!-- Footer (Same as index.html) -->
+     <script src="assets/js/load-components.js"></script> 
+    <script src="assets/js/main.js"></script> 
+    <script>
+        // Set active nav link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.classList.toggle('active', link.href === window.location.href);
+        });
+    </script>
+</body>
+</html>

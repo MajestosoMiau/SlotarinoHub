@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Slot Games | Slotarino</title>
+    <meta name="description" content="Browse our collection of premium slot games">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .slots-container { padding: 100px 2rem 4rem; }
+        .slots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body class="is-preload">
+    <header></header>
+    <!-- Slots Content -->
+    <main class="slots-container">
+        <h1>Slot Games</h1>
+        <p class="subtitle">Browse slots from top providers</p>
+        
+        <div class="slots-grid" id="slots-grid">
+            <!-- Will be populated by JavaScript -->
+        </div>
+    </main>
+
+
+    <script src="assets/js/load-components.js"></script> 
+    <script src="assets/js/main.js"></script> 
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        // Simple active state
+        document.querySelectorAll('.nav-link').forEach(link => {
+            if(link.href === window.location.href) {
+                link.classList.add('active');
+            }
+        });
+        
+        // Load slots data
+        if(typeof initSlots === 'function') {
+            initSlots();
+        }
+    </script>
+</body>
+</html>
