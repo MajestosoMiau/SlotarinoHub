@@ -8,41 +8,18 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/videos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        .videos-container { padding: 100px 2rem 4rem; }
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .video-card {
-            background: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        .video-thumbnail {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-        }
-        .video-thumbnail img {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    </style>
 </head>
-<div class="loading-spinner" id="loadingSpinner">
-    <div class="spinner"></div>
-</div>
 <body>
+    <div class="loading-spinner" id="loadingSpinner">
+        <div class="spinner"></div>
+    </div>
+
     <header>
         <div class="logo">
-            <h1>Slot<span>arino</span></h1>
+            <img src="/images/profilelogo.jpg" alt="Slotarino Logo" class="navbar-logo">
+            <h1>Slot<span>arino's Cozy Hub</span></h1>
         </div>
         <nav>
             <ul>
@@ -56,36 +33,83 @@
     </header>
 
     <main class="videos-container">
-        <h1>Casino Videos</h1>
-        <p class="subtitle">Watch game tutorials and highlights</p>
-        
-        <div class="video-grid" id="video-grid">
-            <!-- Will be populated by JavaScript -->
+        <h2 class="section-title"><i class="fas fa-video"></i> Latest Videos</h2>
+        <div class="video-grid">
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/Ns4iZ_DUXB0?si=AeTo4JBIiFlWHFu0" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>Vegas Magic (PragmaticPlay)</h3>
+                    <div class="video-meta">
+                        <span><i class="fas fa-calendar-alt"></i> May 21, 2025</span>
+                        <span><i class="fas fa-clock"></i> 1:21</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/-iYnESJi5ug?si=T2gHq5W_jxmSI9a-" 
+                            frameborder="0" 
+                            allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>AMATIC Highlights</h3>
+                    <div class="video-meta">
+                        <span><i class="fas fa-calendar-alt"></i> May 20, 2025</span>
+                        <span><i class="fas fa-clock"></i> 6:47</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/hwdIRQj9KX4?si=mXVQq-XBqZAfMTrm"
+                            frameborder="0" 
+                            allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>East Coast vs West Coast (NoLimit)</h3>
+                    <div class="video-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Mar 11, 2025</span>
+                        <span><i class="fas fa-clock"></i> 1:30</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/4fxBQDTBG2I?si=MToEBO6dg_cB3lqT"
+                            frameborder="0" 
+                            allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>Dragon's Domain (Hacksaw)</h3>
+                    <div class="video-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Feb 22, 2025</span>
+                        <span><i class="fas fa-clock"></i> 1:53</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
-      <footer>
-    <div class="footer-content">
-        <p>&copy; 2024 Slotarino. All rights reserved.</p>
-        <a href="mailto: slotarino.biz@gmail.com" class="footer-link">
-            <i class="fas fa-envelope"></i> Contact Us
-        </a>
-        <a href="https://discord.gg/D3zTCDjfG8" target="_blank" class="footer-link">
-            <i class="fab fa-discord"></i> Join Discord
-        </a>
-    </div>
-</footer>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Slotarino. All rights reserved.</p>
+            <a href="mailto:slotarino.biz@gmail.com" class="footer-link">
+                <i class="fas fa-envelope"></i> Contact Us
+            </a>
+            <a href="https://discord.gg/D3zTCDjfG8" target="_blank" class="footer-link">
+                <i class="fab fa-discord"></i> Join Discord
+            </a>
+        </div>
+    </footer>
 
     <script src="/assets/js/main.js"></script>
-    <script>
-        // Set active nav link
-        document.querySelectorAll('nav a').forEach(link => {
-            if(link.href === window.location.href) {
-                link.classList.add('active');
-            }
-        });
-        
-        // Video loading logic can go here
-    </script>
 </body>
 </html>
