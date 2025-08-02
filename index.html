@@ -6,7 +6,24 @@
     <title>Slotarino's Cozy Hub</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <meta name="description" content="Your page-specific description">
+<meta name="keywords" content="casino, slots, poker, tournaments">
+<meta property="og:title" content="Your Page Title">
+<meta property="og:description" content="Your page description">
+<meta property="og:image" content="/images/og-image.jpg">
+<meta property="og:url" content="https://yourdomain.com">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
 </head>
+
+<div class="loading-spinner" id="loadingSpinner">
+    <div class="spinner"></div>
+</div>
 <body>
     <!-- Header (Logo + Navigation) -->
     <header>
@@ -54,8 +71,27 @@
     </main>
 
     <!-- Footer -->
-    <footer>
+   <footer>
+    <div class="footer-content">
         <p>&copy; 2024 Slotarino. All rights reserved.</p>
-    </footer>
+        <a href="mailto: slotarino.biz@gmail.com" class="footer-link">
+            <i class="fas fa-envelope"></i> Contact Us
+        </a>
+        <a href="https://discord.gg/D3zTCDjfG8" target="_blank" class="footer-link">
+            <i class="fab fa-discord"></i> Join Discord
+        </a>
+    </div>
+</footer>
+
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Simple active state
+        document.querySelectorAll('nav a').forEach(link => {
+            if(link.href === window.location.href) {
+                link.classList.add('active');
+            }
+        });
+    </script>
 </body>
 </html>

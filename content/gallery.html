@@ -3,67 +3,82 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slot Gallery | Slotarino</title>
-    <meta name="description" content="Beautiful slot machine screenshots">
+    <title>Casino Gallery | Slotarino</title>
+    <meta name="description" content="Explore our casino game gallery">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        .gallery-container {
-            padding: 100px 2rem 4rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
+        .gallery-container { padding: 100px 2rem 4rem; }
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.5rem;
+            gap: 2rem;
             margin-top: 2rem;
+        }
+        .gallery-item img {
+            width: 100%;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item img:hover {
+            transform: scale(1.03);
         }
     </style>
 </head>
-<body class="is-preload">
-     <header>
+
+<div class="loading-spinner" id="loadingSpinner">
+    <div class="spinner"></div>
+</div>
+<body>
+    <header>
         <div class="logo">
             <h1>Slot<span>arino</span></h1>
         </div>
         <nav>
             <ul>
-                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="content/slots.html"><i class="fas fa-sliders-h"></i> Slots</a></li>
-                <li><a href="content/gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
-                <li><a href="content/videos.html"><i class="fas fa-video"></i> Videos</a></li>
-                <li><a href="content/ptourn.html"><i class="fas fa-trophy"></i> Poker Tournaments</a></li>
+                <li><a href="/index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="/content/slots.html"><i class="fas fa-sliders-h"></i> Slots</a></li>
+                <li><a href="/content/gallery.html" class="active"><i class="fas fa-images"></i> Gallery</a></li>
+                <li><a href="/content/videos.html"><i class="fas fa-video"></i> Videos</a></li>
+                <li><a href="/content/ptourn.html"><i class="fas fa-trophy"></i> Poker Tournaments</a></li>
             </ul>
         </nav>
     </header>
 
-    
-    
-    <!-- Gallery Content -->
     <main class="gallery-container">
-        <h1>Slot Gallery</h1>
-        <p class="subtitle">Beautiful slot machine screenshots</p>
+        <h1>Game Gallery</h1>
+        <p class="subtitle">Explore our collection of casino games</p>
         
-        <div class="gallery-grid">
-            <div class="gallery-item glass-card">
-                <img src="assets/img/gallery/slot1.jpg" alt="Starburst Slot" class="gallery-image">
-                <div class="gallery-caption">Starburst XXXtreme</div>
-            </div>
-            <!-- More gallery items -->
+        <div class="gallery-grid" id="gallery-grid">
+            <!-- Will be populated by JavaScript -->
         </div>
     </main>
-   <!-- Footer will load here -->
-    <footer></footer>
-   <script src="assets/js/load-components.js"></script> 
-    <script src="assets/js/main.js"></script> 
+
+      <footer>
+    <div class="footer-content">
+        <p>&copy; 2024 Slotarino. All rights reserved.</p>
+        <a href="mailto: slotarino.biz@gmail.com" class="footer-link">
+            <i class="fas fa-envelope"></i> Contact Us
+        </a>
+        <a href="https://discord.gg/D3zTCDjfG8" target="_blank" class="footer-link">
+            <i class="fab fa-discord"></i> Join Discord
+        </a>
+    </div>
+</footer>
+
+    <script src="/assets/js/main.js"></script>
     <script>
         // Set active nav link
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.classList.toggle('active', link.href === window.location.href);
+        document.querySelectorAll('nav a').forEach(link => {
+            if(link.href === window.location.href) {
+                link.classList.add('active');
+            }
         });
+        
+        // Gallery loading logic can go here
     </script>
 </body>
 </html>

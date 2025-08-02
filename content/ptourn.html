@@ -4,86 +4,92 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Poker Tournaments | Slotarino</title>
-    <meta name="description" content="Upcoming poker tournaments schedule">
+    <meta name="description" content="Upcoming poker tournaments and events">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        .tournaments-container {
-            padding: 100px 2rem 4rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        .tournaments-table {
-            width: 100%;
+        .tournaments-container { padding: 100px 2rem 4rem; }
+        .tournament-list {
             margin-top: 2rem;
-            border-collapse: collapse;
         }
-        .tournaments-table th {
-            background: rgba(251, 146, 60, 0.2);
-            padding: 1rem;
-            text-align: left;
+        .tournament-card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
         }
-        .tournaments-table td {
-            padding: 1rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+        .tournament-date {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .register-btn {
+            align-self: flex-start;
         }
     </style>
 </head>
-<body class="is-preload">
-   <header>
+<div class="loading-spinner" id="loadingSpinner">
+    <div class="spinner"></div>
+</div>
+<body>
+    <header>
         <div class="logo">
             <h1>Slot<span>arino</span></h1>
         </div>
         <nav>
             <ul>
-                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="content/slots.html"><i class="fas fa-sliders-h"></i> Slots</a></li>
-                <li><a href="content/gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
-                <li><a href="content/videos.html"><i class="fas fa-video"></i> Videos</a></li>
-                <li><a href="content/ptourn.html"><i class="fas fa-trophy"></i> Poker Tournaments</a></li>
+                <li><a href="/index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="/content/slots.html"><i class="fas fa-sliders-h"></i> Slots</a></li>
+                <li><a href="/content/gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+                <li><a href="/content/videos.html"><i class="fas fa-video"></i> Videos</a></li>
+                <li><a href="/content/ptourn.html" class="active"><i class="fas fa-trophy"></i> Poker Tournaments</a></li>
             </ul>
         </nav>
     </header>
 
-    
-    <!-- Tournaments Content -->
     <main class="tournaments-container">
         <h1>Poker Tournaments</h1>
-        <p class="subtitle">Upcoming events and schedules</p>
+        <p class="subtitle">Upcoming events and registration</p>
         
-        <table class="tournaments-table glass-card">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Event</th>
-                    <th>Buy-in</th>
-                    <th>Prize Pool</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>May 15</td>
-                    <td>Sunday Million</td>
-                    <td>$215</td>
-                    <td>$1,000,000</td>
-                </tr>
-                <!-- More tournament rows -->
-            </tbody>
-        </table>
+        <div class="tournament-list" id="tournament-list">
+            <!-- Will be populated by JavaScript -->
+            <div class="tournament-card">
+                <h3>Weekly Texas Hold'em Championship</h3>
+                <p class="tournament-date">Every Sunday at 8:00 PM EST</p>
+                <p>Buy-in: $50 | Prize pool: $5,000 guaranteed</p>
+                <a href="#" class="btn register-btn">Register Now</a>
+            </div>
+        </div>
     </main>
-    <!-- Footer will load here -->
-    <footer></footer>
-    <!-- Footer (Same as index.html) -->
-     <script src="assets/js/load-components.js"></script> 
-    <script src="assets/js/main.js"></script> 
+
+      <footer>
+    <div class="footer-content">
+        <p>&copy; 2024 Slotarino. All rights reserved.</p>
+        <a href="mailto: slotarino.biz@gmail.com" class="footer-link">
+            <i class="fas fa-envelope"></i> Contact Us
+        </a>
+        <a href="https://discord.gg/D3zTCDjfG8" target="_blank" class="footer-link">
+            <i class="fab fa-discord"></i> Join Discord
+        </a>
+    </div>
+</footer>
+
+    <script src="/assets/js/main.js"></script>
     <script>
         // Set active nav link
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.classList.toggle('active', link.href === window.location.href);
+        document.querySelectorAll('nav a').forEach(link => {
+            if(link.href === window.location.href) {
+                link.classList.add('active');
+            }
         });
+        
+        // Tournament loading logic can go here
     </script>
 </body>
 </html>

@@ -3,73 +3,89 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slot Videos | Slotarino</title>
-    <meta name="description" content="Watch the latest slot gameplay videos">
+    <title>Casino Videos | Slotarino</title>
+    <meta name="description" content="Watch casino game videos and tutorials">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        .videos-container {
-            padding: 100px 2rem 4rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        .videos-grid {
+        .videos-container { padding: 100px 2rem 4rem; }
+        .video-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
+        .video-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .video-thumbnail {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        }
+        .video-thumbnail img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     </style>
 </head>
-<body class="is-preload">
- <header>
+<div class="loading-spinner" id="loadingSpinner">
+    <div class="spinner"></div>
+</div>
+<body>
+    <header>
         <div class="logo">
             <h1>Slot<span>arino</span></h1>
         </div>
         <nav>
             <ul>
-                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="content/slots.html"><i class="fas fa-sliders-h"></i> Slots</a></li>
-                <li><a href="content/gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
-                <li><a href="content/videos.html"><i class="fas fa-video"></i> Videos</a></li>
-                <li><a href="content/ptourn.html"><i class="fas fa-trophy"></i> Poker Tournaments</a></li>
+                <li><a href="/index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="/content/slots.html"><i class="fas fa-sliders-h"></i> Slots</a></li>
+                <li><a href="/content/gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+                <li><a href="/content/videos.html" class="active"><i class="fas fa-video"></i> Videos</a></li>
+                <li><a href="/content/ptourn.html"><i class="fas fa-trophy"></i> Poker Tournaments</a></li>
             </ul>
         </nav>
     </header>
 
-
-    <!-- Videos Content -->
     <main class="videos-container">
-        <h1>Slot Videos</h1>
-        <p class="subtitle">Watch the latest gameplay and reviews</p>
+        <h1>Casino Videos</h1>
+        <p class="subtitle">Watch game tutorials and highlights</p>
         
-        <div class="videos-grid">
-            <div class="video-card glass-card">
-                <div class="video-thumbnail">
-                    <img src="assets/img/videos/thumb1.jpg" alt="Mega Moolah Jackpot">
-                    <div class="play-button"><i class="fas fa-play"></i></div>
-                </div>
-                <div class="video-info">
-                    <h3>Mega Moolah Jackpot Win</h3>
-                    <p>15 min watch</p>
-                </div>
-            </div>
-            <!-- More video cards -->
+        <div class="video-grid" id="video-grid">
+            <!-- Will be populated by JavaScript -->
         </div>
     </main>
-    <footer></footer>
 
-    <!-- Footer (Same as index.html) -->
-     <script src="assets/js/load-components.js"></script> 
-    <script src="assets/js/main.js"></script> 
+      <footer>
+    <div class="footer-content">
+        <p>&copy; 2024 Slotarino. All rights reserved.</p>
+        <a href="mailto: slotarino.biz@gmail.com" class="footer-link">
+            <i class="fas fa-envelope"></i> Contact Us
+        </a>
+        <a href="https://discord.gg/D3zTCDjfG8" target="_blank" class="footer-link">
+            <i class="fab fa-discord"></i> Join Discord
+        </a>
+    </div>
+</footer>
+
+    <script src="/assets/js/main.js"></script>
     <script>
         // Set active nav link
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.classList.toggle('active', link.href === window.location.href);
+        document.querySelectorAll('nav a').forEach(link => {
+            if(link.href === window.location.href) {
+                link.classList.add('active');
+            }
         });
+        
+        // Video loading logic can go here
     </script>
 </body>
 </html>

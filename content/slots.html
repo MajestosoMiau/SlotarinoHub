@@ -7,7 +7,7 @@
     <meta name="description" content="Browse our collection of premium slot games">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -20,6 +20,9 @@
         }
     </style>
 </head>
+<div class="loading-spinner" id="loadingSpinner">
+    <div class="spinner"></div>
+</div>
 <body class="is-preload">
  <header>
         <div class="logo">
@@ -27,11 +30,11 @@
         </div>
         <nav>
             <ul>
-                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="content/slots.html"><i class="fas fa-sliders-h"></i> Slots</a></li>
-                <li><a href="content/gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
-                <li><a href="content/videos.html"><i class="fas fa-video"></i> Videos</a></li>
-                <li><a href="content/ptourn.html"><i class="fas fa-trophy"></i> Poker Tournaments</a></li>
+                <li><a href="/index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="/content/slots.html" class="active"><i class="fas fa-sliders-h"></i> Slots</a></li>
+                <li><a href="/content/gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+                <li><a href="/content/videos.html"><i class="fas fa-video"></i> Videos</a></li>
+                <li><a href="/content/ptourn.html"><i class="fas fa-trophy"></i> Poker Tournaments</a></li>
             </ul>
         </nav>
     </header>
@@ -46,14 +49,22 @@
         </div>
     </main>
 
+      <footer>
+    <div class="footer-content">
+        <p>&copy; 2024 Slotarino. All rights reserved.</p>
+        <a href="mailto: slotarino.biz@gmail.com" class="footer-link">
+            <i class="fas fa-envelope"></i> Contact Us
+        </a>
+        <a href="https://discord.gg/D3zTCDjfG8" target="_blank" class="footer-link">
+            <i class="fab fa-discord"></i> Join Discord
+        </a>
+    </div>
+</footer>
 
-    <script src="assets/js/load-components.js"></script> 
-    <script src="assets/js/main.js"></script> 
-
-    <script src="../assets/js/main.js"></script>
+    <script src="/assets/js/main.js"></script>
     <script>
         // Simple active state
-        document.querySelectorAll('.nav-link').forEach(link => {
+        document.querySelectorAll('nav a').forEach(link => {
             if(link.href === window.location.href) {
                 link.classList.add('active');
             }
