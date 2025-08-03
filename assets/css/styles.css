@@ -921,3 +921,83 @@ footer::before {
         padding: 0.4rem 0.8rem;
     }
 }
+
+/* ===== MOBILE OPTIMIZATION ===== */
+@media (max-width: 768px) {
+  /* Header/Nav */
+  header {
+    padding: 0.5rem 1rem;
+    flex-direction: column;
+  }
+  
+  .logo h1 {
+    font-size: 1.5rem;
+  }
+  
+  nav ul {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  nav li {
+    flex-shrink: 0;
+  }
+  
+  /* Casino Cards */
+  .casino-box {
+    flex-direction: column;
+  }
+  
+  .casino-logo {
+    width: 100%;
+    padding: 1rem;
+  }
+  
+  /* Tournament Table */
+  .tournaments-table {
+    display: block;
+  }
+  
+  .tournaments-table thead {
+    display: none;
+  }
+  
+  .tournaments-table tr {
+    display: block;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .tournaments-table td {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+  }
+  
+  .tournaments-table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    margin-right: 1rem;
+    color: var(--primary);
+  }
+}
+
+@media (max-width: 480px) {
+  /* Even smaller devices */
+  .logo h1 {
+    font-size: 1.3rem;
+  }
+  
+  nav a {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .btn {
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+}
